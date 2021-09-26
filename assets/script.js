@@ -1,4 +1,4 @@
-var requestURL = 'http://localhost/kinofil_0.1.0/assets/bdd.json';
+var requestURL = 'assets/bdd.json';
 var request = new XMLHttpRequest();
 /* nouvelle requete */
 request.open('GET', requestURL);

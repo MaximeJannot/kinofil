@@ -14,8 +14,10 @@ body {
 section {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: space-evenly;
     align-items: center;
+    width: 100%;
     min-height: 300px;
     margin-left: 20%;
     margin-right: 20%;
