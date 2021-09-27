@@ -19,6 +19,86 @@
       "site": "Vodkaster",
       "rating": "4",
       "url": "https://vodkaster.telerama.fr/films/jojo-rabbit/1391709"
+    },
+    {
+      "movie": "Les Évadés",
+      "director": "Frank Darabont",
+      "publication": "1994",
+      "quote": "En ce lieu noir de cruauté, la survie demeure par les liens et l'amitié, mais c'est en la passion que, parmi l'humanité, subvient l'évasion.",
+      "author": "Zeyken",
+      "site": "Vodkaster",
+      "rating": "3.5",
+      "url": "https://vodkaster.telerama.fr/films/les-evades/10779"
+    },
+    {
+      "movie": "Scream",
+      "director": "Wes Craven",
+      "publication": "1996",
+      "quote": "Craven éviscère le Slasher pour mieux le redessiner par un regard sur l'horreur et ses codes goguenard et déformé : celui de Ghostface.",
+      "author": "WeOwnTheNight",
+      "site": "Vodkaster",
+      "rating": "4.5",
+      "url": "https://vodkaster.telerama.fr/films/les-evades/10779"
+    },
+    {
+      "movie": "Melancholia",
+      "director": "Lars von Trier",
+      "publication": "2011",
+      "quote": "Cérémonie de vie et de mort d'un huis clos intimement universel qui s'évanouit aux lueurs crépusculaires de la Mélancolie.",
+      "author": "Bully",
+      "site": "Vodkaster",
+      "rating": "3.5",
+      "url": "https://vodkaster.telerama.fr/films/melancholia/649938"
+    },
+    {
+      "movie": "Boulevard de la mort",
+      "director": "Quentin Tarantino",
+      "publication": "2007",
+      "quote": "L’asphalte, jungle rebelle où à mort, se déchire la tôle.De la jouissance des mots à celle de l'image,Tarantino célèbre les Girls Fury Road.",
+      "author": "Cath44",
+      "site": "Vodkaster",
+      "rating": "4.5",
+      "url": "https://vodkaster.telerama.fr/films/boulevard-de-la-mort-un-film-grindhouse/5108"
+    },
+    {
+      "movie": "Reservoir dogs",
+      "director": "Quentin Tarantino",
+      "publication": "1992",
+      "quote": "Il y a un nouveau loup dans la bergerie...Il s'appelle Quentin et il a du chien dans le réservoir !!",
+      "author": "Itachi",
+      "site": "Vodkaster",
+      "rating": "4",
+      "url": "https://vodkaster.telerama.fr/films/reservoir-dogs/62189"
+    },
+    {
+      "movie": "Resident Evil",
+      "director": "Paul W.S. Anderson",
+      "publication": "2002",
+      "quote": "Mila Jovovich, en robe de soirée et foufoune à l'air, fait du kick-boxing avec des chiens-zombie. Et même pas de sélection à Cannes !!!",
+      "author": "RegisX",
+      "site": "Vodkaster",
+      "rating": "3.5",
+      "url": "https://vodkaster.telerama.fr/films/resident-evil/62201"
+    },
+    {
+      "movie": "Détour mortel",
+      "director": "Rob Schmidt",
+      "publication": "2002",
+      "quote": "Un film d'horreur , série B,qui ne vaut évidemmement aucun détour, mortel, et de plus sans queue et surtout ni...tête !!!!",
+      "author": "CRITICATOR",
+      "site": "Allociné",
+      "rating": "0.5",
+      "url": "https://www.allocine.fr/film/fichefilm-47281/critiques/spectateurs/"
+    },
+    {
+      "movie": "Solo: A Star Wars Story ",
+      "director": "Ron Howard",
+      "publication": "2018",
+      "quote": "Western sidéral apathique, héros sans âme ni substance et scénario sans carburant. Han Alden, l’aventurier d’un mythe perdu. So bad.",
+      "author": "Cath44",
+      "site": "Vodkaster",
+      "rating": "2",
+      "url": "https://vodkaster.telerama.fr/films/solo-a-star-wars-story/1331303"
     }
   ]
 }
