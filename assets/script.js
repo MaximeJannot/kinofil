@@ -18,13 +18,14 @@ function getRandomInt(max) {
 
 function cardMovie(jsonObject) {
 	var ratingSection = document.getElementById('ratingId');
+	ratingSection.removeAttribute('class');
 	ratingSection.classList.add(jsonObject.rating);
 
 	var quoteSection = document.getElementById('quoteId');
 	quoteSection.textContent = "« " + jsonObject.quote + " »";
 
 	var authorSection = document.getElementById('authorId');
-	authorSection.textContent = jsonObject.author + " - ";
+	authorSection.textContent = jsonObject.author + ", ";
 
 	var siteSection = document.createElement('cite');
   siteSection.textContent = jsonObject.site;
@@ -43,9 +44,17 @@ function cardMovie(jsonObject) {
 }
 
 window.onload = function(){ 
-    // your code 
 	var generate = document.getElementById('generateId');
 	generate.onclick = function() {
-	  location.reload();
+	  // location.reload();
+	  answer.removeAttribute('class');
+	  var randomMovie = getRandomInt(request.response.movies.length);
+  	var moviesRequest = request.response.movies[randomMovie];
+  	cardMovie(moviesRequest);
+	}
+
+	var answer = document.getElementById('answerId');
+	answer.onclick = function() {
+		answer.classList.add('open');
 	}
 };
