@@ -57,4 +57,6 @@ window.onload = function(){
 	answer.onclick = function() {
 		answer.classList.add('open');
 	}
+
+	
 };
