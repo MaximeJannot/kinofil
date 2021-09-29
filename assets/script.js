@@ -7,13 +7,43 @@ request.responseType = 'json';
 request.send();
 /* reponse du serveur et traitement */
 request.onload = function() {
-	var randomMovie = getRandomInt(request.response.movies.length);
-  var moviesRequest = request.response.movies[randomMovie];
-  cardMovie(moviesRequest);
+	var arrayMovie = request.response.movies;
+	shuffleArray(arrayMovie);
+	let i = 0;
+	var selectMovie = arrayMovie[i];
+	cardMovie(selectMovie);
+
+	var counter = document.getElementById('counterId');
+	let counterInit = 1;
+	counter.textContent = counterInit + "/" + arrayMovie.length;
+
+	window.onload = function(){ 
+		var generate = document.getElementById('generateId');
+		var answer = document.getElementById('answerId');
+		
+		generate.onclick = function() {
+			answer.removeAttribute('class');
+
+			const j = i++;
+			const counterInitPlus = counterInit++;
+			if (i < arrayMovie.length) {
+				var selectMovie = arrayMovie[i];
+				cardMovie(selectMovie);
+				counter.textContent = counterInit + "/" + arrayMovie.length;
+			} else {
+				console.log('prout');
+			}
+		}
+
+		answer.onclick = function() {
+			answer.classList.add('open');
+		}
+	};
+
 }
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+function shuffleArray(inputArray){
+  inputArray.sort(()=> Math.random() - 0.5);
 }
 
 function cardMovie(jsonObject) {
@@ -42,21 +72,3 @@ function cardMovie(jsonObject) {
 	var blockquoteSection = document.getElementById('blockquoteId');
 	blockquoteSection.setAttribute('cite', jsonObject.url);
 }
-
-window.onload = function(){ 
-	var generate = document.getElementById('generateId');
-	generate.onclick = function() {
-	  // location.reload();
-	  answer.removeAttribute('class');
-	  var randomMovie = getRandomInt(request.response.movies.length);
-  	var moviesRequest = request.response.movies[randomMovie];
-  	cardMovie(moviesRequest);
-	}
-
-	var answer = document.getElementById('answerId');
-	answer.onclick = function() {
-		answer.classList.add('open');
-	}
-
-	
-};

@@ -10,6 +10,10 @@ body {
 	font-family: sans-serif;
 	background-color: #1b3535;
 }
+h1 a {
+	color: white;
+	text-decoration: unset;
+}
 section {
 	display: flex;
 	flex-wrap: wrap;
@@ -133,6 +137,12 @@ a[target="_blank"]:after {
 	margin-top: 25px;
 	font-size: 1.2rem;
 	cursor: pointer;
+}
+.counter {
+	width: 100%;
+	margin-top: 25px;
+	font-size: 1rem;
+	color: white;
 }
 #answerId {
 	position: relative;
