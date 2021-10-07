@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width"/>
+  <title>Kinofil - Le jeu pour cinéphile</title>
+  <link rel="stylesheet" href="assets/boot_loader.css">
+  <script src="assets/script.js"></script>
+</head>
+<body>
+  <h1><a href="index.html">Kinofil</a></h1>
+  <p>Quels films se cachent derrières ses critiques d'internautes ?</p>
+  <section>
+    <div id="ratingId"></div>
+    <figure>
+      <blockquote id="blockquoteId" cite="">
+        <p id="quoteId"></p>  
+      </blockquote>
+      <figcaption><a id="authorId" href="" target="_blank"></a></figcaption>
+    </figure>
+    <form name="QCM">
+      <ul>
+        <li>
+          <input id="choix1Input" type="radio" name="choiceMovie" value=""/>
+          <label id="choix1Label" for="choiceMovie"></label>
+        </li>
+        <li>
+          <input id="choix2Input" type="radio" name="choiceMovie" value=""/>
+          <label id="choix2Label" for="choiceMovie"></label>
+        </li>
+        <li>
+          <input id="choix3Input" type="radio" name="choiceMovie" value=""/>
+          <label id="choix3Label" for="choiceMovie"></label>
+        </li>
+        <li>
+          <input id="choix4Input" type="radio" name="choiceMovie" value=""/>
+          <label id="choix4Label" for="choiceMovie"></label>
+        </li>
+      </ul>
+    </form>
+    <button id="answerId">
+      <span id="movieId"></span>
+      <span id="dateId"></span>
+      <span id="directorId"></span>
+    </button>
+  </section>
+  <div class="counter"><p id="counterId"></p></div>
+  <button id="generateId">Suivant</button>
+</body>
+</html>
+
