@@ -18,14 +18,34 @@
       </blockquote>
       <figcaption><a id="authorId" href="" target="_blank"></a></figcaption>
     </figure>
-    <button id="answerId">
-      <span id="movieId"></span>
-      <span id="dateId"></span>
-      <span id="directorId"></span>
-    </button>
+    <form name="QCM">
+      <ul>
+        <li>
+          <input id="choix1Input" type="radio" name="choiceMovie" value=""/>
+          <label id="choix1Label" for="choix1Input"></label>
+        </li>
+        <li>
+          <input id="choix2Input" type="radio" name="choiceMovie" value=""/>
+          <label id="choix2Label" for="choix2Input"></label>
+        </li>
+        <li>
+          <input id="choix3Input" type="radio" name="choiceMovie" value=""/>
+          <label id="choix3Label" for="choix3Input"></label>
+        </li>
+        <li>
+          <input id="choix4Input" type="radio" name="choiceMovie" value=""/>
+          <label id="choix4Label" for="choix4Input"></label>
+        </li>
+      </ul>
+    </form>
+    <p id="alertAnswer"></p>
+    <p id="alertAnswerTrue" style="display: none;">La réponse est : <span id="alertAnswerDetail"></span></p>
+    <div class="counter">
+      <span>Films : </span><p id="counterId"></p>
+    </div>
   </section>
-  <div class="counter"><p id="counterId"></p></div>
   <button id="generateId">Suivant</button>
+  <p id="resetId" style="display: none;">Vous pouvez rafréchire la page pour refaire une partie.</p>
 </body>
 </html>
 

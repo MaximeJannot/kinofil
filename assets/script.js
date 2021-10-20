@@ -19,8 +19,7 @@ request.onload = function() {
 	cardMovie(selectMovie);
 	counterMovies(arrayMovie);
 	choiceQcm(selectMovie, arrayMovie, i);
-	btnNext(arrayMovie);
-
+	btnApp(arrayMovie);
 }
 
 
@@ -40,13 +39,6 @@ function cardMovie(jsonObject) {
   siteSection.textContent = jsonObject.site;
   authorSection.appendChild(siteSection);
 
-  var movieSection = document.getElementById('movieId');
-	movieSection.textContent = jsonObject.movie;
-	var directorSection = document.getElementById('directorId');
-	directorSection.textContent = jsonObject.director;
-	var dateSection = document.getElementById('dateId');
-	dateSection.textContent = "(" + jsonObject.publication + ")";
-
 	authorSection.setAttribute('href', jsonObject.url);
 	var blockquoteSection = document.getElementById('blockquoteId');
 	blockquoteSection.setAttribute('cite', jsonObject.url);
@@ -61,41 +53,70 @@ function getRandomInt(max) {
 }
 
 function choiceQcm(jsonObject, arrayBdd, counter) {
-	// var arraySplice = arrayBdd.splice(0, 1);
-
 	var arrayNbChoice = [];
 	for (i = 0; i < arrayBdd.length; i++) {
 		arrayNbChoice.push(i);
 	}
 	arrayNbChoice.splice(counter,1);
-	console.log(arrayNbChoice);
 	shuffleArray(arrayNbChoice);
 	var choise1 = arrayNbChoice[0];
 	var choise2 = arrayNbChoice[1];
 	var choise3 = arrayNbChoice[2];
 	var arrayQcm = [jsonObject,arrayBdd[choise1],arrayBdd[choise2],arrayBdd[choise3]];
 	shuffleArray(arrayQcm);
+	var inputRadio = document.getElementsByName("choiceMovie");
+	var alertAnswer = document.getElementById('alertAnswer');
+	var alertAnswerTrue = document.getElementById('alertAnswerTrue');
+	var alertAnswerDetail = document.getElementById('alertAnswerDetail');
 	let id = 1;
 	for (i = 0; i < 4; i++) {
 		document.getElementById('choix'+id+'Label').textContent = arrayQcm[i].movie + ", " + arrayQcm[i].director + "(" + arrayQcm[i].publication + ")";
-		document.getElementById('choix'+id+'Input').setAttribute('value', arrayQcm[i].movie);
+		document.getElementById('choix'+id+'Input').removeAttribute('value');
+		document.getElementById('choix'+id+'Input').checked = false;
+		alertAnswer.removeAttribute('class');
+		alertAnswer.textContent = "";
+		alertAnswerDetail.textContent = "";
+		css(alertAnswerTrue, {
+		    display: 'none'
+		});
+		if (arrayQcm[i].movie == jsonObject.movie) {
+			document.getElementById('choix'+id+'Input').setAttribute('value', 1);
+		} 
 		const idAdd = id++;
 	}
 
-	/*var arrayNbChoice = [2,6,8];
-	shuffleArray(arrayNbChoice);
-	var choiceRandom1 = arrayNbChoice[0];
-	var choiceRandom2 = arrayNbChoice[1];
-	var choiceRandom3 = arrayNbChoice[2];
-	var arrayQcm = [jsonObject,arrayBdd[choiceRandom1],arrayBdd[choiceRandom2],arrayBdd[choiceRandom3]];
-	shuffleArray(arrayQcm);
-
-	let id = 1;
 	for (i = 0; i < 4; i++) {
-		document.getElementById('choix'+id+'Label').textContent = arrayQcm[i].movie + ", " + arrayQcm[i].director + "(" + arrayQcm[i].publication + ")";
-		document.getElementById('choix'+id+'Input').setAttribute('value', arrayQcm[i].movie);
-		const idAdd = id++;
-	}*/
+		if (inputRadio[i].getAttribute('value')) {
+			inputRadio[i].onclick = function() {
+				alertAnswer.textContent = "Bonne réponse";
+				alertAnswer.classList.add('true');
+				disabledRadioBtn(true);
+			};
+		} else {
+			inputRadio[i].onclick = function() {
+				alertAnswer.textContent = "Mauvaise réponse";
+				alertAnswer.classList.add('false');
+				css(alertAnswerTrue, {
+				    display: 'flex'
+				});
+				alertAnswerDetail.textContent = " " + jsonObject.movie + ", " + jsonObject.director + "(" + jsonObject.publication + ")";
+				disabledRadioBtn(true);
+			};
+		}
+	}
+}
+
+function disabledRadioBtn(value) {
+	document.getElementById("choix1Input").disabled = value;
+	document.getElementById("choix2Input").disabled = value;
+	document.getElementById("choix3Input").disabled = value;
+	document.getElementById("choix4Input").disabled = value;
+}
+
+function css(element, style) {
+	for (const property in style) {
+		element.style[property] = style[property];
+	}    
 }
 
 function counterMovies(arrayBdd) {
@@ -104,18 +125,20 @@ function counterMovies(arrayBdd) {
 	counter.textContent = counterInit + "/" + arrayBdd.length;
 }
 
-function btnNext(arrayBdd) {
+function btnApp(arrayBdd) {
 	window.onload = function(){ 
 		var generate = document.getElementById('generateId');
-		var answer = document.getElementById('answerId');
+		// var answer = document.getElementById('answerId');
 		var counter = document.getElementById('counterId');
+		var reset = document.getElementById('resetId');
 
 		let i = 0;
 		let counterInit = 1;
 		
+		/* Next movie */
 		generate.onclick = function() {
-			answer.removeAttribute('class');
-
+			disabledRadioBtn(false);
+			
 			const j = i++;
 			const counterInitPlus = counterInit++;
 			if (i < arrayBdd.length) {
@@ -124,13 +147,19 @@ function btnNext(arrayBdd) {
 				cardMovie(selectMovie);
 				choiceQcm(selectMovie, arrayMovie, i);
 				counter.textContent = counterInit + "/" + arrayBdd.length;
+				if (counterInit == arrayBdd.length) {
+					css(reset, {
+				    display: 'flex'
+					});
+					if (counterInit == arrayBdd.length) {
+						css(generate, {
+					    display: 'none'
+						});
+					}
+				}
 			} else {
-				console.log('prout');
+				console.log(i);
 			}
-		}
-
-		answer.onclick = function() {
-			answer.classList.add('open');
 		}
 	};
 }
