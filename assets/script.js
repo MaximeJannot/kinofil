@@ -67,16 +67,20 @@ function choiceQcm(jsonObject, arrayBdd, counter) {
 	var inputRadio = document.getElementsByName("choiceMovie");
 	var alertAnswer = document.getElementById('alertAnswer');
 	var alertAnswerTrue = document.getElementById('alertAnswerTrue');
+	var alertAnswerFalse = document.getElementById('alertAnswerFalse');
 	var alertAnswerDetail = document.getElementById('alertAnswerDetail');
 	let id = 1;
 	for (i = 0; i < 4; i++) {
-		document.getElementById('choix'+id+'Label').textContent = arrayQcm[i].movie + ", " + arrayQcm[i].director + "(" + arrayQcm[i].publication + ")";
+		document.getElementById('choix'+id+'Label').textContent = arrayQcm[i].movie /*+ ", " + arrayQcm[i].director*/ + " (" + arrayQcm[i].publication + ")";
 		document.getElementById('choix'+id+'Input').removeAttribute('value');
 		document.getElementById('choix'+id+'Input').checked = false;
 		alertAnswer.removeAttribute('class');
 		alertAnswer.textContent = "";
 		alertAnswerDetail.textContent = "";
 		css(alertAnswerTrue, {
+		    display: 'none'
+		});
+		css(alertAnswerFalse, {
 		    display: 'none'
 		});
 		if (arrayQcm[i].movie == jsonObject.movie) {
@@ -90,16 +94,20 @@ function choiceQcm(jsonObject, arrayBdd, counter) {
 			inputRadio[i].onclick = function() {
 				alertAnswer.textContent = "Bonne réponse";
 				alertAnswer.classList.add('true');
+				css(alertAnswerTrue, {
+				    display: 'flex'
+				});
+				alertAnswerTrue.textContent = " " + jsonObject.movie + ", " + jsonObject.director + " (" + jsonObject.publication + ")";
 				disabledRadioBtn(true);
 			};
 		} else {
 			inputRadio[i].onclick = function() {
 				alertAnswer.textContent = "Mauvaise réponse";
 				alertAnswer.classList.add('false');
-				css(alertAnswerTrue, {
+				css(alertAnswerFalse, {
 				    display: 'flex'
 				});
-				alertAnswerDetail.textContent = " " + jsonObject.movie + ", " + jsonObject.director + "(" + jsonObject.publication + ")";
+				alertAnswerDetail.textContent = " " + jsonObject.movie + ", " + jsonObject.director + " (" + jsonObject.publication + ")";
 				disabledRadioBtn(true);
 			};
 		}

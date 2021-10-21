@@ -87,14 +87,20 @@ a[target="_blank"]:after {
     font-size: 0.7rem;
     vertical-align: super;
 }
-form[name="QCM"] ul {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 0 35px;
-	margin-top: 20px;
-	li {
+form[name="QCM"] {
+	width: 100%;
+	ul {
 		display: flex;
-		width: 50%;
+		flex-wrap: wrap;
+		padding: 0 35px;
+		margin-top: 20px;
+		li {
+			display: flex;
+			width: 50%;
+			@media (max-width: 768px) {
+				width: 100%;
+			}
+		}
 	}
 }
 input[type="radio"] {
@@ -221,7 +227,8 @@ input[type="radio"] {
 		color: $valide;
 	}
 }
-#alertAnswerTrue {
+#alertAnswerTrue,
+#alertAnswerFalse {
 	font-size: 1.5rem;
 	span {
 		font-weight: bold;
