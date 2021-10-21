@@ -91,7 +91,7 @@
       "url": "https://www.allocine.fr/film/fichefilm-47281/critiques/spectateurs/"
     },
     {
-      "movie": "Solo: A Star Wars Story ",
+      "movie": "Solo: A Star Wars Story",
       "director": "Ron Howard",
       "publication": "2018",
       "quote": "Western sidéral apathique, héros sans âme ni substance et scénario sans carburant. Han Alden, l’aventurier d’un mythe perdu. So bad.",
@@ -99,6 +99,106 @@
       "site": "Vodkaster",
       "rating": "2",
       "url": "https://vodkaster.telerama.fr/films/solo-a-star-wars-story/1331303"
+    },
+    {
+      "movie": "Titanic",
+      "director": "James Cameron",
+      "publication": "1997",
+      "quote": "Malgré les nombreux icebergs de la critique moderne, on aura beau dire, on aura beau faire...ce film restera à tout jamais insubmersible.",
+      "author": "Flol",
+      "site": "Vodkaster",
+      "rating": "4",
+      "url": "https://vodkaster.telerama.fr/films/titanic/52988"
+    },
+    {
+      "movie": "Slumdog Millionaire",
+      "director": "Danny Boyle et Loveleen Tandan",
+      "publication": "2008",
+      "quote": "Bollywood réussi ou un Hollywood raté ? C'est niais et gentil mais pas de quoi fouetter un Maharadja et ce sera mon dernier mot.",
+      "author": "3615_CH",
+      "site": "Vodkaster",
+      "rating": "2.5",
+      "url": "https://vodkaster.telerama.fr/films/slumdog-millionaire/73176"
+    },
+    {
+      "movie": "Gladiator",
+      "director": "Ridley Scott",
+      "publication": "2000",
+      "quote": "Maximus, le gladiateur obligé, pourfend l'empereur ambitieux : sur le sable du Colisée se jouent la liberté des esclaves et le sort de Rome.",
+      "author": "Juliano",
+      "site": "Vodkaster",
+      "rating": "4.5",
+      "url": "https://vodkaster.telerama.fr/films/gladiator/6863"
+    },
+    {
+      "movie": "L'Auberge espagnole",
+      "director": "Cédric Klapisch",
+      "publication": "2002",
+      "quote": "C'est sympa cette ambiance de potes, hein, mais bon c'est un peu de la branlette (espagnole).",
+      "author": "cyril",
+      "site": "Vodkaster",
+      "rating": "3.5",
+      "url": "https://vodkaster.telerama.fr/films/l-auberge-espagnole/9072"
+    },
+    {
+      "movie": "Big Fish",
+      "director": "Tim Burton",
+      "publication": "2003",
+      "quote": "La transmission traitée avec grâce, humour mais aussi avec une émouvante puissance réflexive sur la fragilité des choses. Tim grandit !",
+      "author": "louetdad",
+      "site": "Vodkaster",
+      "rating": "4",
+      "url": "https://vodkaster.telerama.fr/films/big-fish/4968"
+    },
+    {
+      "movie": "Les Griffes de la nuit",
+      "director": "Wes Craven",
+      "publication": "1984",
+      "quote": "“ Freddy, je t'en supplie, prends soin de tes griffes et continue à hanter nos nuits. ”",
+      "author": "louetdad",
+      "site": "Vodkaster",
+      "rating": "4",
+      "url": "https://vodkaster.telerama.fr/films/les-griffes-de-la-nuit/10857"
+    },
+    {
+      "movie": "Pulp Fiction",
+      "director": "Quentin Tarantino",
+      "publication": "1994",
+      "quote": "Théorème de Quentin: 1 sermon + 1 royal cheese + 1 montre dans le cul = 1 Palme d'Or",
+      "author": "raph31",
+      "site": "Vodkaster",
+      "rating": "5",
+      "url": "https://vodkaster.telerama.fr/films/pulp-fiction/61333"
+    },
+    {
+      "movie": "28 jours plus tard",
+      "director": "Danny Boyle",
+      "publication": "2002",
+      "quote": "Faire courir des Zombies, c'est con mais il fallait y penser. Un réveil dans un Londres post-apocalyptique dingue finit de nous achever...",
+      "author": "itachi",
+      "site": "Vodkaster",
+      "rating": "4",
+      "url": "https://vodkaster.telerama.fr/films/28-jours-plus-tard/4154"
+    },
+    {
+      "movie": "Jeux d'enfants",
+      "director": "Yann Samuell",
+      "publication": "2003",
+      "quote": "Critique de l'âge adulte, romance ludique et insouciance juvénile. On en retient les tirades qui ont pollué les blogs de nos petites sœurs.",
+      "author": "thibaudbo",
+      "site": "Vodkaster",
+      "rating": "1.5",
+      "url": "https://vodkaster.telerama.fr/films/jeux-d-enfants/7515"
+    },
+    {
+      "movie": "Only Lovers Left Alive",
+      "director": "Jim Jarmusch",
+      "publication": "2013",
+      "quote": "L'immortalité c'est long, surtout vers la fin. Comme ce film, en fait.",
+      "author": "FeydRautha",
+      "site": "Vodkaster",
+      "rating": "2",
+      "url": "https://vodkaster.telerama.fr/films/only-lovers-left-alive/955199"
     }
   ]
 }
