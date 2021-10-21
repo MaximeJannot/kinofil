@@ -69,7 +69,9 @@ function choiceQcm(jsonObject, arrayBdd, counter) {
 	var alertAnswerTrue = document.getElementById('alertAnswerTrue');
 	var alertAnswerFalse = document.getElementById('alertAnswerFalse');
 	var alertAnswerDetail = document.getElementById('alertAnswerDetail');
+
 	let id = 1;
+
 	for (i = 0; i < 4; i++) {
 		document.getElementById('choix'+id+'Label').textContent = arrayQcm[i].movie /*+ ", " + arrayQcm[i].director*/ + " (" + arrayQcm[i].publication + ")";
 		document.getElementById('choix'+id+'Input').removeAttribute('value');
@@ -88,7 +90,7 @@ function choiceQcm(jsonObject, arrayBdd, counter) {
 		} 
 		const idAdd = id++;
 	}
-
+	
 	for (i = 0; i < 4; i++) {
 		if (inputRadio[i].getAttribute('value')) {
 			inputRadio[i].onclick = function() {
@@ -142,6 +144,20 @@ function btnApp(arrayBdd) {
 
 		let i = 0;
 		let counterInit = 1;
+
+		/* Counter Point */
+		var inputRadio = document.getElementsByName("choiceMovie");
+		let pointCounterValue = 0;
+		document.getElementById("pointCounter").textContent = pointCounterValue + "/" + arrayBdd.length;
+
+		for (i = 0; i < 4; i++) {
+			if (inputRadio[i].getAttribute('value')) {
+				inputRadio[i].onclick = function() {
+					const pointCounterValueAdd = pointCounterValue++;
+					document.getElementById("pointCounter").textContent = pointCounterValue + "/" + arrayBdd.length;
+				};
+			} 
+		}
 		
 		/* Next movie */
 		generate.onclick = function() {
@@ -168,6 +184,17 @@ function btnApp(arrayBdd) {
 			} else {
 				console.log(i);
 			}
+
+			/* Counter Point */
+			for (i = 0; i < 4; i++) {
+				if (inputRadio[i].getAttribute('value')) {
+					inputRadio[i].onclick = function() {
+						const pointCounterValueAdd = pointCounterValue++;
+						document.getElementById("pointCounter").textContent = pointCounterValue + "/" + arrayBdd.length;
+					};
+				} 
+			}
+			/* ** */
 		}
 	};
 }
