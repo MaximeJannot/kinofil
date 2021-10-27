@@ -16,8 +16,8 @@ request.onload = function() {
 	let i = 0;
 	var selectMovie = arrayMovie[i];
 
-	cardMovie(selectMovie);
 	counterMovies(arrayMovie);
+	cardMovie(selectMovie);
 	choiceQcm(selectMovie, arrayMovie, i);
 	btnApp(arrayMovie);
 }
@@ -138,26 +138,11 @@ function counterMovies(arrayBdd) {
 function btnApp(arrayBdd) {
 	window.onload = function(){ 
 		var generate = document.getElementById('generateId');
-		// var answer = document.getElementById('answerId');
 		var counter = document.getElementById('counterId');
 		var reset = document.getElementById('resetId');
 
 		let i = 0;
 		let counterInit = 1;
-
-		/* Counter Point */
-		var inputRadio = document.getElementsByName("choiceMovie");
-		let pointCounterValue = 0;
-		document.getElementById("pointCounter").textContent = pointCounterValue + "/" + arrayBdd.length;
-
-		for (i = 0; i < 4; i++) {
-			if (inputRadio[i].getAttribute('value')) {
-				inputRadio[i].onclick = function() {
-					const pointCounterValueAdd = pointCounterValue++;
-					document.getElementById("pointCounter").textContent = pointCounterValue + "/" + arrayBdd.length;
-				};
-			} 
-		}
 		
 		/* Next movie */
 		generate.onclick = function() {
@@ -168,9 +153,12 @@ function btnApp(arrayBdd) {
 			if (i < arrayBdd.length) {
 				var arrayMovie = arrayBdd;
 				var selectMovie = arrayMovie[i];
+				
 				cardMovie(selectMovie);
 				choiceQcm(selectMovie, arrayMovie, i);
+				
 				counter.textContent = counterInit + "/" + arrayBdd.length;
+
 				if (counterInit == arrayBdd.length) {
 					css(reset, {
 				    display: 'flex'
@@ -184,17 +172,6 @@ function btnApp(arrayBdd) {
 			} else {
 				console.log(i);
 			}
-
-			/* Counter Point */
-			for (i = 0; i < 4; i++) {
-				if (inputRadio[i].getAttribute('value')) {
-					inputRadio[i].onclick = function() {
-						const pointCounterValueAdd = pointCounterValue++;
-						document.getElementById("pointCounter").textContent = pointCounterValue + "/" + arrayBdd.length;
-					};
-				} 
-			}
-			/* ** */
 		}
 	};
 }
