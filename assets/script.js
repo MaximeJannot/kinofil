@@ -121,6 +121,17 @@ function disabledRadioBtn(value) {
 	document.getElementById("choix2Input").disabled = value;
 	document.getElementById("choix3Input").disabled = value;
 	document.getElementById("choix4Input").disabled = value;
+	if (value == true) {
+		document.getElementById("choix1Label").setAttribute('tabindex', '-1');
+		document.getElementById("choix2Label").setAttribute('tabindex', '-1');
+		document.getElementById("choix3Label").setAttribute('tabindex', '-1');
+		document.getElementById("choix4Label").setAttribute('tabindex', '-1');
+	} else {
+		document.getElementById("choix1Label").setAttribute('tabindex', '0');
+		document.getElementById("choix2Label").setAttribute('tabindex', '0');
+		document.getElementById("choix3Label").setAttribute('tabindex', '0');
+		document.getElementById("choix4Label").setAttribute('tabindex', '0');
+	}
 }
 
 function css(element, style) {
@@ -138,16 +149,27 @@ function counterMovies(arrayBdd) {
 function btnApp(arrayBdd) {
 	window.onload = function(){ 
 		var generate = document.getElementById('generateId');
+		var generateScore = document.getElementById('generateScore');
+		var containerScore = document.getElementById('boxPointCounter');
 		var counter = document.getElementById('counterId');
+		var counterScore = document.getElementById('pointCounter');
 		var reset = document.getElementById('resetId');
+		var score = [];
 
 		let i = 0;
 		let counterInit = 1;
 		
 		/* Next movie */
 		generate.onclick = function() {
+
+			/* counter score */
+			if (alertAnswer.textContent == "Bonne réponse") {
+				score.push('true');
+			}
+			/* ** */
+
 			disabledRadioBtn(false);
-			
+			/* generate new movie */
 			const j = i++;
 			const counterInitPlus = counterInit++;
 			if (i < arrayBdd.length) {
@@ -160,18 +182,44 @@ function btnApp(arrayBdd) {
 				counter.textContent = counterInit + "/" + arrayBdd.length;
 
 				if (counterInit == arrayBdd.length) {
-					css(reset, {
+					css(generate, {
+				    display: 'none'
+					});
+					css(generateScore, {
 				    display: 'flex'
 					});
-					if (counterInit == arrayBdd.length) {
-						css(generate, {
-					    display: 'none'
-						});
-					}
 				}
 			} else {
 				console.log(i);
 			}
+		}
+
+		/* Generate score */
+		generateScore.onclick = function() {
+			if (alertAnswer.textContent == "Bonne réponse") {
+				score.push('true');
+			}
+			var pourcentageScore = ((score.length / arrayBdd.length) * 100);
+			counterScore.textContent = score.length + "/" + arrayBdd.length;
+			css(reset, {
+		    display: 'flex'
+			});
+			css(containerScore, {
+		    display: 'flex'
+			});
+			css(generateScore, {
+		    display: 'none'
+			});
+			console.log(pourcentageScore);
+			var commentPointCounter = document.getElementById("commentPointCounter");
+			if (pourcentageScore < 25) {
+				commentPointCounter.textContent = "Outch ! C'est franchement mauvais."
+			} else if (pourcentageScore >= 50) {
+				commentPointCounter.textContent = "Mouai pas mal."
+			} else if (pourcentageScore >= 90) {
+				commentPointCounter.textContent = "T'est incolable !"
+			}
+			disabledRadioBtn(true);
 		}
 	};
 }
