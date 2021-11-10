@@ -214,7 +214,7 @@ function btnApp(arrayBdd) {
 			var commentPointCounter = document.getElementById("commentPointCounter");
 			if (pourcentageScore < 25) {
 				commentPointCounter.textContent = "Outch ! C'est franchement mauvais."
-			} else if (pourcentageScore >= 50) {
+			} else if (pourcentageScore >= 50 && pourcentageScore < 90 ) {
 				commentPointCounter.textContent = "Mouai pas mal."
 			} else if (pourcentageScore >= 90) {
 				commentPointCounter.textContent = "T'est incolable !"
