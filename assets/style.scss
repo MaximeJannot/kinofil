@@ -102,11 +102,11 @@ form[name="QCM"] {
 	}
 }
 input[type="radio"] {
-	display: none;
-	// position: absolute;
+	// display: none;
+	position: absolute;
 	// width: 0;
 	// height: 0;
-	// opacity: 0;
+	opacity: 0;
 	& + label {
 		display: flex;
 		align-items: center;
@@ -118,6 +118,7 @@ input[type="radio"] {
 	    margin: 5px;
 	    cursor: pointer;
 	}
+	&:focus + label,
 	& + label:hover {
 	    border: 2px solid $secondaryColor;
 	    color: $secondaryColor;
@@ -128,6 +129,11 @@ input[type="radio"] {
 	    color: #191919;
 	}
 	&:checked + label {
+		background-color: $secondaryColor;
+		border: 2px solid $secondaryColor;
+	    color: white;
+	}
+	/* &:checked + label {
 		background-color: $error;
 		border: 2px solid $error;
 		color: white;
@@ -137,7 +143,7 @@ input[type="radio"] {
 		background-color: $valide;
 		border: 2px solid $valide;
 		color: white;
-	}
+	} */
 }
 aside {
 	width: 100%;
@@ -197,6 +203,7 @@ aside {
 	}
 }
 .btn {
+	display: flex;
 	width: 100%;
     margin-left: 20%;
     margin-right: 20%;
@@ -205,11 +212,29 @@ aside {
 	font-size: 1.2rem;
 	justify-content: center;
 	cursor: pointer;
-
+	background-color: $bgMain;
+	border: 2px solid white;
+	color: white;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+		background-color: darken($bgMain, 7%);
+	}
 	@media (max-width: 768px) {
     	margin-left: 10px;
     	margin-right: 10px;
     }
+}
+#answerVerification {
+	width: auto;
+	margin-left: 0;
+	margin-right: 0;
+	background-color: transparent;
+	border: 2px solid $bgMain;
+	color: $bgMain;
+	&:hover {
+		color: white;
+		background-color: $bgMain;
+	}
 }
 .counter {
 	display: flex;
@@ -226,6 +251,22 @@ aside {
 	}
 }
 
+#errorAnswer:not(:empty) {
+	color: #d73719;
+	margin-top: 25px;
+	font-size: 1rem;
+	font-weight: bold;
+	&:before,
+	&:after {
+		content: "🐞";
+	}
+	&:before {
+		margin-right: 10px;
+	}
+	&:after {
+		margin-left: 10px;
+	}
+}
 #alertAnswer {
 	font-size: 1.5rem;
 	margin-top: 20px;

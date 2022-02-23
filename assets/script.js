@@ -85,35 +85,46 @@ function choiceQcm(jsonObject, arrayBdd, counter) {
 		css(alertAnswerFalse, {
 		    display: 'none'
 		});
+		css(document.getElementById('answerVerification'), {
+		    display: 'flex'
+		});
+		document.getElementById('errorAnswer').textContent = "";
 		if (arrayQcm[i].movie == jsonObject.movie) {
 			document.getElementById('choix'+id+'Input').setAttribute('value', 1);
 		} 
 		const idAdd = id++;
 	}
-	
-	for (i = 0; i < 4; i++) {
-		if (inputRadio[i].getAttribute('value')) {
-			inputRadio[i].onclick = function() {
-				alertAnswer.textContent = "Bonne réponse";
-				alertAnswer.classList.add('true');
-				css(alertAnswerTrue, {
-				    display: 'flex'
-				});
-				alertAnswerTrue.textContent = " " + jsonObject.movie + ", " + jsonObject.director + " (" + jsonObject.publication + ")";
-				disabledRadioBtn(true);
-			};
-		} else {
-			inputRadio[i].onclick = function() {
-				alertAnswer.textContent = "Mauvaise réponse";
-				alertAnswer.classList.add('false');
-				css(alertAnswerFalse, {
-				    display: 'flex'
-				});
-				alertAnswerDetail.textContent = " " + jsonObject.movie + ", " + jsonObject.director + " (" + jsonObject.publication + ")";
-				disabledRadioBtn(true);
-			};
+
+	document.getElementById('answerVerification').onclick = function() {
+		if (!document.querySelector('input[type="radio"]:checked')) {
+			document.getElementById('errorAnswer').textContent = "Tu n'a pas selectionné de réponse.";
 		}
-	}
+		if (document.querySelector('input[type="radio"]:checked').getAttribute('value')) {
+			alertAnswer.textContent = "Bonne réponse";
+			alertAnswer.classList.add('true');
+			css(alertAnswerTrue, {
+			    display: 'flex'
+			});
+			css(document.getElementById('answerVerification'), {
+			    display: 'none'
+			});
+			alertAnswerTrue.textContent = " " + jsonObject.movie + ", " + jsonObject.director + " (" + jsonObject.publication + ")";
+			disabledRadioBtn(true);
+			document.getElementById('errorAnswer').textContent = "";
+		} else {
+			alertAnswer.textContent = "Mauvaise réponse";
+			alertAnswer.classList.add('false');
+			css(alertAnswerFalse, {
+			    display: 'flex'
+			});
+			css(document.getElementById('answerVerification'), {
+			    display: 'none'
+			});
+			alertAnswerDetail.textContent = " " + jsonObject.movie + ", " + jsonObject.director + " (" + jsonObject.publication + ")";
+			disabledRadioBtn(true);
+			document.getElementById('errorAnswer').textContent = "";
+		}
+	};
 }
 
 function disabledRadioBtn(value) {
@@ -121,17 +132,6 @@ function disabledRadioBtn(value) {
 	document.getElementById("choix2Input").disabled = value;
 	document.getElementById("choix3Input").disabled = value;
 	document.getElementById("choix4Input").disabled = value;
-	if (value == true) {
-		document.getElementById("choix1Label").setAttribute('tabindex', '-1');
-		document.getElementById("choix2Label").setAttribute('tabindex', '-1');
-		document.getElementById("choix3Label").setAttribute('tabindex', '-1');
-		document.getElementById("choix4Label").setAttribute('tabindex', '-1');
-	} else {
-		document.getElementById("choix1Label").setAttribute('tabindex', '0');
-		document.getElementById("choix2Label").setAttribute('tabindex', '0');
-		document.getElementById("choix3Label").setAttribute('tabindex', '0');
-		document.getElementById("choix4Label").setAttribute('tabindex', '0');
-	}
 }
 
 function css(element, style) {
@@ -149,6 +149,7 @@ function counterMovies(arrayBdd) {
 function btnApp(arrayBdd) {
 	window.onload = function(){ 
 		var generate = document.getElementById('generateId');
+		var answerVerification = document.getElementById('answerVerification');
 		var generateScore = document.getElementById('generateScore');
 		var containerScore = document.getElementById('boxPointCounter');
 		var counter = document.getElementById('counterId');
@@ -185,6 +186,9 @@ function btnApp(arrayBdd) {
 					css(generate, {
 				    display: 'none'
 					});
+					css(answerVerification, {
+				    display: 'none'
+					});
 					css(generateScore, {
 				    display: 'flex'
 					});
@@ -210,7 +214,6 @@ function btnApp(arrayBdd) {
 			css(generateScore, {
 		    display: 'none'
 			});
-			console.log(pourcentageScore);
 			var commentPointCounter = document.getElementById("commentPointCounter");
 			if (pourcentageScore < 25) {
 				commentPointCounter.textContent = "Outch ! C'est franchement mauvais."

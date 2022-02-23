@@ -30,22 +30,24 @@
       <ul>
         <li>
           <input id="choix1Input" type="radio" name="choiceMovie" value=""/>
-          <label id="choix1Label" for="choix1Input" tabindex="0"></label>
+          <label id="choix1Label" for="choix1Input"></label>
         </li>
         <li>
           <input id="choix2Input" type="radio" name="choiceMovie" value=""/>
-          <label id="choix2Label" for="choix2Input" tabindex="0"></label>
+          <label id="choix2Label" for="choix2Input"></label>
         </li>
         <li>
           <input id="choix3Input" type="radio" name="choiceMovie" value=""/>
-          <label id="choix3Label" for="choix3Input" tabindex="0"></label>
+          <label id="choix3Label" for="choix3Input"></label>
         </li>
         <li>
           <input id="choix4Input" type="radio" name="choiceMovie" value=""/>
-          <label id="choix4Label" for="choix4Input" tabindex="0"></label>
+          <label id="choix4Label" for="choix4Input"></label>
         </li>
       </ul>
     </form>
+    <p id="errorAnswer"></p>
+    <button id="answerVerification" class="btn">Je valide ma réponce !</button>
     <p id="alertAnswer"></p>
     <p id="alertAnswerFalse" style="display: none;">La réponse est : <span id="alertAnswerDetail"></span></p>
     <p id="alertAnswerTrue" style="display: none;"></p>
@@ -57,7 +59,7 @@
       <p>Mes points : <span id="pointCounter"></span></p>
     </div>
   </main>
-  <button id="generateId" class="btn">Suivant</button>
+  <button id="generateId" class="btn">Critique suivante</button>
   <button id="generateScore" class="btn" style="display: none;">Découvrir mon score</button>
   <p id="resetId" class="btn" style="display: none;">Vous pouvez rafréchire la page pour refaire une partie.</p>
 </body>
