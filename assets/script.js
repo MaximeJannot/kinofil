@@ -97,7 +97,7 @@ function choiceQcm(jsonObject, arrayBdd, counter) {
 
 	document.getElementById('answerVerification').onclick = function() {
 		if (!document.querySelector('input[type="radio"]:checked')) {
-			document.getElementById('errorAnswer').textContent = "Tu n'a pas selectionné de réponse.";
+			document.getElementById('errorAnswer').textContent = "Tu n'as pas selectionné de réponse.";
 		}
 		if (document.querySelector('input[type="radio"]:checked').getAttribute('value')) {
 			alertAnswer.textContent = "Bonne réponse";
@@ -220,7 +220,7 @@ function btnApp(arrayBdd) {
 			} else if (pourcentageScore >= 50 && pourcentageScore < 90 ) {
 				commentPointCounter.textContent = "Mouai pas mal."
 			} else if (pourcentageScore >= 90) {
-				commentPointCounter.textContent = "T'est incolable !"
+				commentPointCounter.textContent = "T'es incollable !"
 			}
 			disabledRadioBtn(true);
 		}
