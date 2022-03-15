@@ -143,7 +143,7 @@ function css(element, style) {
 function counterMovies(arrayBdd) {
 	var counter = document.getElementById('counterId');
 	let counterInit = 1;
-	counter.textContent = counterInit + "/" + arrayBdd.length;
+	counter.textContent = counterInit + "/" + 20;
 }
 
 function btnApp(arrayBdd) {
@@ -180,9 +180,9 @@ function btnApp(arrayBdd) {
 				cardMovie(selectMovie);
 				choiceQcm(selectMovie, arrayMovie, i);
 				
-				counter.textContent = counterInit + "/" + arrayBdd.length;
+				counter.textContent = counterInit + "/" + 20;
 
-				if (counterInit == arrayBdd.length) {
+				if (counterInit == 20) {
 					css(generate, {
 				    display: 'none'
 					});

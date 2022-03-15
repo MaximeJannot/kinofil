@@ -199,6 +199,66 @@
       "site": "Vodkaster",
       "rating": "2",
       "url": "https://vodkaster.telerama.fr/films/only-lovers-left-alive/955199"
+    },
+    {
+      "movie": "Sausage party : La vie privée des aliments",
+      "director": "Conrad Vernon et Greg Tiernan",
+      "publication": "2016",
+      "quote": "Tous les ingrédients sont là ! Du food porn grotesque, garnit de vulgarité gratuite.",
+      "author": "Lord Grumpy",
+      "site": "Senscritique",
+      "rating": "3.5",
+      "url": "https://www.senscritique.com/film/Sausage_Party_La_Vie_privee_des_aliments/critique/133191058"
+    },
+    {
+      "movie": "Rupture fatale",
+      "director": "Tyler Perry",
+      "publication": "2020",
+      "quote": "Avec une bonne avocate, le film était plié en 1h.",
+      "author": "Lord Grumpy",
+      "site": "Senscritique",
+      "rating": "3",
+      "url": "https://www.senscritique.com/film/Rupture_fatale/critique/261304341"
+    },
+    {
+      "movie": "Le Vieux qui ne voulait pas fêter son anniversaire",
+      "director": "Felix Herngren",
+      "publication": "2013",
+      "quote": "Quelle vie on mène tout de même quand on a 100 ans.",
+      "author": "Lord Grumpy",
+      "site": "Senscritique",
+      "rating": "3.5",
+      "url": "https://www.senscritique.com/film/Le_Vieux_qui_ne_voulait_pas_feter_son_anniversaire/critique/117866810"
+    },
+    {
+      "movie": "Tchao Pantin",
+      "director": "Claude Berri",
+      "publication": "1983",
+      "quote": "Paris poisseux, délavé, rincé, la rue barbare et des nuits de colère, Coluche inonde l'écran de son vécu, l'humain parle par tous ses pores.",
+      "author": "ianov",
+      "site": "Vodkaster",
+      "rating": "4",
+      "url": "https://vodkaster.telerama.fr/films/tchao-pantin/51466"
+    },
+    {
+      "movie": "Tueurs nés",
+      "director": "Oliver Stone",
+      "publication": "1994",
+      "quote": "Un “Bonny & Clyde” sous-acide et qui donne un peu la gerbe.",
+      "author": "JulieRBRT",
+      "site": "Vodkaster",
+      "rating": "3.5",
+      "url": "https://vodkaster.telerama.fr/films/tueurs-nes/53940"
+    },
+    {
+      "movie": "Problemos",
+      "director": "Eric Judor",
+      "publication": "2017",
+      "quote": "Leftovers zadiste qui se serait pris un platane. Déroutant et hilarant, maladroit mais attachant : ok pour venir dormir dans la yourte",
+      "author": "zglub215",
+      "site": "Vodkaster",
+      "rating": "3.5",
+      "url": "https://vodkaster.telerama.fr/films/problemos/1344191"
     }
   ]
 }
