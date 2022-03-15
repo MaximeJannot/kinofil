@@ -186,9 +186,6 @@ function btnApp(arrayBdd) {
 					css(generate, {
 				    display: 'none'
 					});
-					css(answerVerification, {
-				    display: 'none'
-					});
 					css(generateScore, {
 				    display: 'flex'
 					});
