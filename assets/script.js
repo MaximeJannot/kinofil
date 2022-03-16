@@ -201,7 +201,7 @@ function btnApp(arrayBdd) {
 				score.push('true');
 			}
 			var pourcentageScore = ((score.length / arrayBdd.length) * 100);
-			counterScore.textContent = score.length + "/" + arrayBdd.length;
+			counterScore.textContent = score.length + "/" + 20;
 			css(reset, {
 		    display: 'flex'
 			});
